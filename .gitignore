@@ -40,21 +40,6 @@ htmlcov/
 .hypothesis/
 
 # ==================================
-# Test Folders and Files
-# ==================================
-test/
-tests/
-__tests__/
-*_test.py
-test_*.py
-*.test.js
-*.test.ts
-*.test.jsx
-*.test.tsx
-*.spec.js
-*.spec.ts
-
-# ==================================
 # Node.js
 # ==================================
 node_modules/
