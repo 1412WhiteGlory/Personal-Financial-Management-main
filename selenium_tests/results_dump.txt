@@ -1,0 +1,42 @@
+TC_REG_001 | PASS | Redirected=True, DB_Verified=True | 
+TC_REG_002 | PASS | StayedOnPage=True, ErrorShown=True | 
+TC_REG_005 | PASS | StayedOnPage=True, ErrorShown=True | 
+TC_REG_006 | PASS | StayedOnPage=True, ErrorShown=True | 
+TC_REG_007 | PASS | StayedOnPage=True, ErrorShown=True | 
+TC_REG_010 | PASS | StayedOnPage=True, ErrorShown=True | 
+TC_REG_UI_001 | PASS | Heading=True, Inputs=3, Submit=True, LoginLink=True | 
+TC_LOGIN_001 | PASS | Redirected=True, DB_Token_Valid=True | 
+TC_LOGIN_002 | PASS | StayedOnLogin=True, ErrorShown=True | 
+TC_LOGIN_003 | PASS | StayedOnLogin=True, ErrorShown=True | 
+TC_LOGIN_004 | PASS | StayedOnLogin=True, ErrorShown=True | 
+TC_LOGIN_005 | PASS | StayedOnLogin=True, ErrorShown=True | 
+TC_LOGIN_UI_001 | PASS | Heading=True, Inputs=2, Submit=True, SignupLink=True, ForgotLink=True | 
+TC_LOGIN_UI_002 | PASS | ForgotLinkFound=True, Navigated=True | 
+TC_INC_001 | PASS | CountBefore=10, CountAfter=11, UI_Entry=True | 
+TC_INC_002 | PASS | CountBefore=10, CountAfter=11 | 
+TC_INC_005 | PASS | NotAdded=True, ErrorShown=True | 
+TC_INC_008 | PASS | NotAdded=True, ErrorShown=True | 
+TC_INC_DELETE_001 | PASS | CountBefore=11, CountAfter=10 | 
+TC_INC_UI_001 | PASS | Overview=True, AddBtn=True, Search=True, Nav=False | 
+TC_EXP_001 | PASS | CountBefore=6, CountAfter=7 | 
+TC_EXP_002 | PASS | CountBefore=6, CountAfter=7 | 
+TC_EXP_005 | PASS | NotAdded=True, ErrorShown=False | 
+TC_EXP_008 | PASS | NotAdded=True, ErrorShown=False | 
+TC_EXP_DELETE_001 | PASS | CountBefore=7, CountAfter=6 | 
+TC_EXP_UI_001 | PASS | Overview=True, AddBtn=True | 
+TC_DASH_001 | PASS | URLCorrect=True, HasContent=True | 
+TC_DASH_002 | PASS | Balance=True, Income=True, Expense=True | 
+TC_DASH_003 | PASS | API_Income=71300000, API_Expense=21000000, API_Status=200 | 
+TC_DASH_004 | PASS | Navigated=True, URL=http://localhost:5173/income | 
+TC_DASH_005 | PASS | Navigated=True | 
+TC_DASH_006 | PASS | SVG_Count=5, Canvas_Count=0 | 
+TC_DASH_007 | PASS | HasRecentSection=True | 
+TC_DASH_UI_001 | PASS | GridElements=10, Title=PFM | 
+TC_NAV_001 | PASS | RedirectedToLogin=True, CurrentURL=http://localhost:5173/login | 
+TC_NAV_002 | PASS | RedirectedToLogin=True | 
+TC_NAV_003 | PASS | FoundLinks={'dashboard': True}, AllBtns=['Áp dụng', 'Đặt lại', 'Xem tất cả', 'Xem tất cả', 'Xem tất cả'] | 
+TC_NAV_004 | PASS | Found=True, Navigated=True | 
+TC_NAV_005 | PASS | Found=True, Navigated=True | 
+TC_NAV_006 | PASS | Title='PFM' | 
+TC_NAV_007 | PASS | TestedSizes=[(1920, 1080), (1366, 768), (768, 1024), (375, 812)], AllOK=True | 
+TC_NAV_008 | PASS | NoAuth→Login=True, Auth→Dashboard=True | 

@@ -1,0 +1,13 @@
+test_case_id,source,amount,date,icon,expected_result,description
+TC_INC_001,Salary,15000000,2025-04-01,,success,Add income with valid data
+TC_INC_002,Freelance,5000000,2025-04-05,,success,Add freelance income
+TC_INC_003,Investment,2000000,2025-03-15,,success,Add investment income
+TC_INC_004,Bonus,3000000,2025-04-10,,success,Add bonus income
+TC_INC_005,,5000000,2025-04-01,,fail_missing_source,Add income without source
+TC_INC_006,Salary,,2025-04-01,,fail_missing_amount,Add income without amount
+TC_INC_007,Salary,5000000,,,fail_missing_date,Add income without date
+TC_INC_008,Salary,-5000000,2025-04-01,,fail_invalid_amount,Add income with negative amount
+TC_INC_009,Salary,0,2025-04-01,,fail_invalid_amount,Add income with zero amount
+TC_INC_010,Side Project,1500000,2025-04-12,,success,Add side project income
+TC_INC_UPDATE_001,Salary Updated,20000000,2025-04-01,,success,Update income source and amount
+TC_INC_DELETE_001,,,,,success,Delete first income entry

@@ -1,0 +1,109 @@
+=== Feature_IM Test IDs ===
+  IM_01 | Check the overall screen interface.
+  IM_02 | Check the interface layout and component display
+  IM_03 | Check the interface when zoomed out and zoomed in.
+  IM_04 | Check the "Pick icon" button
+  IM_05 | Check the icon
+  IM_06 | Check the close of icon
+  IM_07 | Check the name of income box
+  IM_08 | Check the amount of income box
+  IM_09 | Check the "Calendar" button
+  IM_10 | Check the "Add income" button
+  IM_11 | Check the "Add income" button
+  IM_12 | Check the date filtering
+  IM_IC_01 | Verify authenticated user can open Income page from menu
+  IM_IC_02 | Verify Add Income modal opens
+  IM_IC_03 | Verify add income with valid data
+  IM_IC_04 | Verify Amount must be numeric
+  IM_IC_05 | 	Verify source is required
+  IM_IC_06 | Verify Amount must be greater than zero			
+  IM_IC_07 | Verify income list refreshes after successful add
+  IM_IC_08 | Verify unique income source suggestion updates
+  IM_IC_09 | Verify duplicate income source suggestion updates
+  IM_SI_01 | Verify user can search income by date range with valid data
+  IM_SI_02 | Verify Start Date field accepts invalid date format
+  IM_SI_03 | Verify error when Start Date is after End Date
+  IM_SI_04 | Verify error when Start Date field is empty
+  IM_SI_05 | Verify error when End Date field is empty
+  IM_SI_06 | Verify Reset button clears date range and shows all income
+  IM_SI_07 | Verify search returns empty list when no records in range
+  IM_SI_08 | Verify search with same Start Date and End Date
+  IM_SI_09 | Verify date picker calendar UI works correctly
+  IM_VID_01 | Verify Bar chart title and layout
+  IM_VID_02 | Verify Line chart title and layout
+  IM_VID_03 | Verify chart data is loaded from income transactions
+  IM_VID_04 | Verify chronological order of chart points
+  IM_VID_05 | Verify X-axis date format
+  IM_VID_06 | Verify tooltip displays Source and Amount on hover
+  IM_VID_07 | Verify tooltip displays correct information about Source and Amount on
+  IM_VID_08 | Verify tooltip displays correct information about Source and Amount on
+  IM_VID_09 | Verify chart updates after adding new income
+  IM_VID_10 | Verify chart behavior with empty income data
+  IM_VID_11 | Verify responsive behavior when zooming
+  IM_VID_12 | Verify reset/search interaction updates diagrams
+  IM_VIS_01 | Verify Income Source section is displayed
+  IM_VIS_02 | Verify income source records are displayed correctly
+  IM_VIS_03 | Verify Income Source section is fit
+  IM_VIS_04 | Verify Download button is available in Income Source section
+  IM_VIS_05 | Verify Excel export works successfully
+  IM_VIS_06 | Verify Excel file content structure
+
+=== Feature_RL Test IDs ===
+  INT_01 | Check the overall UI of Registration / Login screens
+  INT_02 | Check the interface layout
+  INT_03 | Check the interface when zoomed out and zoomed in.
+  REG_01 | Check registration with valid data
+  REG_02 | Check for empty mandatory fields
+  REG_03 | Check invalid Email format
+  REG_04 | Check registration with existing email
+  REG_05 | Check Password requirements
+  LOG_01 | Verify successful login
+  LOG_02 | Verify login with incorrect password
+  LOG_03 | Verify login with non-existent email
+  LOG_04 | Verify "Quên mật khẩu?" link functionality
+  LOG_05 | Verify Password visibility toggle
+
+=== Latest Test Report ===
+Headers: ['No.', 'Test ID', 'Test Name', 'Module', 'Description', 'Status', 'Actual Result', 'Error Message', 'Screenshot', 'Duration (s)', 'Timestamp']
+  TC_REG_001 | Valid Registration | PASS
+  TC_REG_002 | Missing Full Name | PASS
+  TC_REG_005 | Invalid Email Format | PASS
+  TC_REG_006 | Weak Password (Short) | PASS
+  TC_REG_007 | No Uppercase in Password | PASS
+  TC_REG_010 | No Special Character | PASS
+  TC_REG_UI_001 | Signup Page UI Elements | PASS
+  TC_LOGIN_001 | Valid Login | PASS
+  TC_LOGIN_002 | Wrong Password Login | PASS
+  TC_LOGIN_003 | Empty Email Login | PASS
+  TC_LOGIN_004 | Empty Password Login | PASS
+  TC_LOGIN_005 | Non-existent Account Login | PASS
+  TC_LOGIN_UI_001 | Login Page UI Elements | PASS
+  TC_LOGIN_UI_002 | Forgot Password Link | PASS
+  TC_INC_001 | Add Valid Income | PASS
+  TC_INC_002 | Add Freelance Income | PASS
+  TC_INC_005 | Missing Source Income | PASS
+  TC_INC_008 | Negative Amount Income | PASS
+  TC_INC_DELETE_001 | Delete Income | PASS
+  TC_INC_UI_001 | Income Page Layout | PASS
+  TC_EXP_001 | Add Food Expense | PASS
+  TC_EXP_002 | Add Transportation Expense | PASS
+  TC_EXP_005 | Missing Category Expense | PASS
+  TC_EXP_008 | Negative Amount Expense | PASS
+  TC_EXP_DELETE_001 | Delete Expense | PASS
+  TC_EXP_UI_001 | Expense Page Layout | PASS
+  TC_DASH_001 | Dashboard Loads | PASS
+  TC_DASH_002 | Dashboard Info Cards | PASS
+  TC_DASH_003 | Dashboard Data Consistency | PASS
+  TC_DASH_004 | Navigate to Income | PASS
+  TC_DASH_005 | Navigate to Expense | PASS
+  TC_DASH_006 | Dashboard Charts | PASS
+  TC_DASH_007 | Recent Transactions Section | PASS
+  TC_DASH_UI_001 | Dashboard Responsive Layout | PASS
+  TC_NAV_001 | Unauthenticated Redirect | PASS
+  TC_NAV_002 | Unauthenticated Income Redirect | PASS
+  TC_NAV_003 | Sidebar Navigation Links | PASS
+  TC_NAV_004 | Login to Signup Navigation | PASS
+  TC_NAV_005 | Signup to Login Navigation | PASS
+  TC_NAV_006 | Browser Window Title | PASS
+  TC_NAV_007 | Window Resize Handling | PASS
+  TC_NAV_008 | Root URL Redirect | PASS

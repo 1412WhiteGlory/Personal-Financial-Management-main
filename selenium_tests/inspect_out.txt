@@ -1,0 +1,13 @@
+Files: ['reports\\selenium_test_report.xlsx', 'reports\\selenium_test_report_20260505_213232.xlsx', 'reports\\selenium_test_report_20260505_213705.xlsx', 'reports\\selenium_test_report_20260505_215534.xlsx', 'reports\\selenium_test_report_20260505_221526.xlsx', 'reports\\selenium_test_report_20260505_224808.xlsx', 'reports\\selenium_test_report_20260505_225821.xlsx', 'reports\\selenium_test_report_20260505_231247.xlsx', 'reports\\selenium_test_report_updated.xlsx']
+Sheets: ['Summary', 'Detailed Results', 'Module Breakdown', 'Test Data']
+
+=== Sheet: Summary (rows=19, cols=2) ===
+  R1: ['SELENIUM WEBDRIVER TEST REPORT', None]
+  R2: ['Personal Financial Management Application', None]
+  R3: ['Generated: 2026-05-05 23:12:47', None]
+  All rows (col A-C):
+Traceback (most recent call last):
+  File "F:\HOC\DATN_ANH_QUAN\Personal-Financial-Management-main (1)\Personal-Financial-Management-main-clone\selenium_tests\inspect_report.py", line 21, in <module>
+    print(f"    {row[0]} | {row[1]} | {row[2]} | {row[5]}")
+                                       ~~~^^^
+IndexError: tuple index out of range

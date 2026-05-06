@@ -1,0 +1,13 @@
+test_case_id,category,amount,date,icon,expected_result,description
+TC_EXP_001,Food,500000,2025-04-01,,success,Add food expense
+TC_EXP_002,Transportation,200000,2025-04-03,,success,Add transportation expense
+TC_EXP_003,Entertainment,1000000,2025-04-05,,success,Add entertainment expense
+TC_EXP_004,Bills,3000000,2025-04-10,,success,Add bills expense
+TC_EXP_005,,500000,2025-04-01,,fail_missing_category,Add expense without category
+TC_EXP_006,Food,,2025-04-01,,fail_missing_amount,Add expense without amount
+TC_EXP_007,Food,500000,,,fail_missing_date,Add expense without date
+TC_EXP_008,Food,-500000,2025-04-01,,fail_invalid_amount,Add expense with negative amount
+TC_EXP_009,Food,0,2025-04-01,,fail_invalid_amount,Add expense with zero amount
+TC_EXP_010,Healthcare,800000,2025-04-15,,success,Add healthcare expense
+TC_EXP_UPDATE_001,Food Updated,750000,2025-04-01,,success,Update expense category and amount
+TC_EXP_DELETE_001,,,,,success,Delete first expense entry

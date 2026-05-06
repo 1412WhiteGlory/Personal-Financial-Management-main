@@ -1,0 +1,16 @@
+test_case_id,full_name,email,password,expected_result,description
+TC_REG_001,Nguyen Van A,testuser_reg001@test.com,Test@1234,success,Register with valid data
+TC_REG_002,,testuser_reg002@test.com,Test@1234,fail_missing_name,Register without full name
+TC_REG_003,Nguyen Van C,,Test@1234,fail_missing_email,Register without email
+TC_REG_004,Nguyen Van D,testuser_reg004@test.com,,fail_missing_password,Register without password
+TC_REG_005,Nguyen Van E,invalidemail,Test@1234,fail_invalid_email,Register with invalid email format
+TC_REG_006,Nguyen Van F,testuser_reg006@test.com,short,fail_weak_password,Register with short password (less than 8 chars)
+TC_REG_007,Nguyen Van G,testuser_reg007@test.com,nouppercase1!,fail_weak_password,Register without uppercase letter
+TC_REG_008,Nguyen Van H,testuser_reg008@test.com,NOLOWERCASE1!,fail_weak_password,Register without lowercase letter
+TC_REG_009,Nguyen Van I,testuser_reg009@test.com,NoNumber!!,fail_weak_password,Register without number
+TC_REG_010,Nguyen Van J,testuser_reg010@test.com,NoSpecial1a,fail_weak_password,Register without special character
+TC_LOGIN_001,Login User,testlogin001@test.com,Test@1234,success,Login with valid credentials
+TC_LOGIN_002,,testlogin_bad@test.com,WrongPass@1,fail_invalid,Login with wrong password
+TC_LOGIN_003,,,Test@1234,fail_missing,Login without email
+TC_LOGIN_004,,testlogin001@test.com,,fail_missing,Login without password
+TC_LOGIN_005,,notexist@nowhere.com,Test@1234,fail_invalid,Login with non-existent account
