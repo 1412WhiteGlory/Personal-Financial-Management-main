@@ -1,7 +1,18 @@
 # -*- coding: utf-8 -*-
 """
+File: test_05_dashboard.py
 Test Suite 5: Kiểm tra Trang Tổng quan (Dashboard)
-ID hệ thống: DASH_01 → DASH_07, DASH_UI_01
+
+Danh sách Test ID được kiểm tra trong file này:
+  - TC_DASH_001    → dòng 57   : Trang dashboard tải thành công sau đăng nhập
+  - TC_DASH_002    → dòng 95   : Hiển thị thẻ thông tin (số dư, thu nhập, chi tiêu)
+  - TC_DASH_003    → dòng 127  : Dữ liệu dashboard khớp với API/DB
+  - TC_DASH_004    → dòng 170  : Điều hướng từ dashboard đến trang Thu nhập
+  - TC_DASH_005    → dòng 214  : Điều hướng từ dashboard đến trang Chi tiêu
+  - TC_DASH_006    → dòng 256  : Dashboard hiển thị biểu đồ (SVG/Canvas)
+  - TC_DASH_007    → dòng 287  : Dashboard hiển thị mục giao dịch gần đây
+  - TC_DASH_UI_001 → dòng 317  : Bố cục dashboard có grid layout đáp ứng
+
 Mô tả: Kiểm tra trang dashboard: giao diện, hiển thị dữ liệu, biểu đồ,
        điều hướng và tính nhất quán dữ liệu với API.
 """
@@ -55,10 +66,11 @@ class TestDashboard(BaseTest):
     # ═══════════════════════════════════════════════════════════════════════════
 
     def test_TC_DASH_001_page_loads(self):
-        """DASH_01: Trang tổng quan tải thành công sau đăng nhập.
-        
-        Test ID hệ thống: DASH_01
-        Mục tiêu: Xác minh URL chứa 'dashboard' và trang hiển thị nội dung tài chính.
+        """
+        Test ID : TC_DASH_001
+        File    : test_05_dashboard.py  →  dòng 57
+        Mục tiêu: Xác minh URL chứa 'dashboard' và trang hiển thị nội dung
+                  tài chính (Tổng số dư, Thu nhập, Chi tiêu) sau khi đăng nhập.
         """
         start = time.time()
         tc_id = "TC_DASH_001"
@@ -93,7 +105,12 @@ class TestDashboard(BaseTest):
             raise
 
     def test_TC_DASH_002_info_cards_displayed(self):
-        """TC_DASH_002: Dashboard displays info cards (balance, income, expense)."""
+        """
+        Test ID : TC_DASH_002
+        File    : test_05_dashboard.py  →  dòng 95
+        Mục tiêu: Xác minh dashboard hiển thị đủ 3 thẻ thông tin:
+                  Tổng số dư / Total Balance, Tổng thu nhập, Tổng chi tiêu.
+        """
         start = time.time()
         tc_id = "TC_DASH_002"
 
@@ -125,7 +142,12 @@ class TestDashboard(BaseTest):
             raise
 
     def test_TC_DASH_003_data_matches_api(self):
-        """TC_DASH_003: Dashboard data matches API response (DB verification)."""
+        """
+        Test ID : TC_DASH_003
+        File    : test_05_dashboard.py  →  dòng 127
+        Mục tiêu: Gọi API /dashboard và kiểm tra dữ liệu trả về (status 200).
+                  Xác minh rằng API hoạt động và dữ liệu tài chính có sẵn.
+        """
         start = time.time()
         tc_id = "TC_DASH_003"
 
@@ -168,7 +190,12 @@ class TestDashboard(BaseTest):
             raise
 
     def test_TC_DASH_004_navigation_to_income(self):
-        """TC_DASH_004: Navigate from dashboard to income page."""
+        """
+        Test ID : TC_DASH_004
+        File    : test_05_dashboard.py  →  dòng 170
+        Mục tiêu: Nhấp link/nút 'Thu nhập' từ dashboard và xác minh
+                  URL chuyển sang chứa '/income'.
+        """
         start = time.time()
         tc_id = "TC_DASH_004"
 
@@ -212,7 +239,12 @@ class TestDashboard(BaseTest):
             raise
 
     def test_TC_DASH_005_navigation_to_expense(self):
-        """TC_DASH_005: Navigate from dashboard to expense page."""
+        """
+        Test ID : TC_DASH_005
+        File    : test_05_dashboard.py  →  dòng 214
+        Mục tiêu: Nhấp link/nút 'Chi tiêu' từ dashboard và xác minh
+                  URL chuyển sang chứa '/expense'.
+        """
         start = time.time()
         tc_id = "TC_DASH_005"
 
@@ -254,7 +286,12 @@ class TestDashboard(BaseTest):
             raise
 
     def test_TC_DASH_006_charts_displayed(self):
-        """TC_DASH_006: Dashboard displays charts/graphs."""
+        """
+        Test ID : TC_DASH_006
+        File    : test_05_dashboard.py  →  dòng 256
+        Mục tiêu: Xác minh dashboard hiển thị biểu đồ bằng cách đếm phần tử
+                  SVG (Recharts) hoặc Canvas (Chart.js). Ít nhất 1 phần tử phải tồn tại.
+        """
         start = time.time()
         tc_id = "TC_DASH_006"
 
@@ -285,7 +322,12 @@ class TestDashboard(BaseTest):
             raise
 
     def test_TC_DASH_007_recent_transactions(self):
-        """TC_DASH_007: Dashboard displays recent transactions section."""
+        """
+        Test ID : TC_DASH_007
+        File    : test_05_dashboard.py  →  dòng 287
+        Mục tiêu: Xác minh dashboard hiển thị mục 'Giao dịch gần đây'
+                  (kiểm tra text: 'Giao dịch', 'Transaction', 'gần đây', 'Recent').
+        """
         start = time.time()
         tc_id = "TC_DASH_007"
 
@@ -315,7 +357,12 @@ class TestDashboard(BaseTest):
             raise
 
     def test_TC_DASH_UI_001_responsive_layout(self):
-        """TC_DASH_UI_001: Dashboard layout has proper grid structure."""
+        """
+        Test ID : TC_DASH_UI_001
+        File    : test_05_dashboard.py  →  dòng 317
+        Mục tiêu: Xác minh dashboard có cấu trúc grid layout (đếm phần tử
+                  CSS class chứa 'grid') và tiêu đề cửa sổ không rỗng.
+        """
         start = time.time()
         tc_id = "TC_DASH_UI_001"
 

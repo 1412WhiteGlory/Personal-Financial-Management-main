@@ -1,7 +1,19 @@
 # -*- coding: utf-8 -*-
 """
+File: test_06_navigation.py
 Test Suite 6: Kiểm tra Điều hướng, Đăng xuất và Bảo mật Đường dẫn (Navigation)
-ID hệ thống: NAV_01 → NAV_08
+
+Danh sách Test ID được kiểm tra trong file này:
+  - TC_NAV_001 (LOG_01) -> dòng 39  : Truy cập dashboard không có auth -> redirect /login
+  - TC_NAV_002 (LOG_02) -> dòng 76  : Truy cập /income không có auth -> redirect /login
+  - TC_NAV_003 (INT_02) -> dòng 111 : Sidebar điều hướng các link hoạt động
+  - TC_NAV_004 (LOG_01) -> dòng 185 : Link từ trang Login đến trang Sign Up
+  - TC_NAV_005 (REG_01) -> dòng 230 : Link từ trang Sign Up đến trang Login
+  - TC_NAV_006 (INT_01) -> dòng 275 : Trình duyệt có tiêu đề cửa sổ không rỗng
+  - TC_NAV_007 (INT_03) -> dòng 305 : Ứng dụng xử lý thay đổi kích thước cửa sổ
+  - TC_NAV_008 (LOG_03) -> dòng 349 : URL gốc '/' redirect theo trạng thái đăng nhập
+
+Lưu ý: Giải thích trong ngoặc đơn là Test ID tương đương trong 02_system - Updated.xlsx
 Mô tả: Kiểm tra điều hướng giữa các trang, bảo vệ URL,
        thanh sidebar, tiêu đề cửa sổ và ứng xử khi thay đổi kích thước.
 """
@@ -37,7 +49,12 @@ class TestNavigation(BaseTest):
     # ═══════════════════════════════════════════════════════════
 
     def test_TC_NAV_001_unauthenticated_redirect(self):
-        """TC_NAV_001: Accessing dashboard without login redirects to login."""
+        """
+        Test ID : TC_NAV_001  (tuong duong LOG_01 trong 02_system)
+        File    : test_06_navigation.py  ->  dong 39
+        Muc tieu: Xoa localStorage (logout), truy cap /dashboard truc tiep,
+                  xac minh he thong chuyen huong ve /login.
+        """
         start = time.time()
         tc_id = "TC_NAV_001"
 
@@ -74,7 +91,12 @@ class TestNavigation(BaseTest):
             raise
 
     def test_TC_NAV_002_unauthenticated_income_redirect(self):
-        """TC_NAV_002: Accessing income page without login redirects to login."""
+        """
+        Test ID : TC_NAV_002  (tuong duong LOG_02 trong 02_system)
+        File    : test_06_navigation.py  ->  dong 76
+        Muc tieu: Xoa localStorage (logout), truy cap /income truc tiep,
+                  xac minh he thong chuyen huong ve /login.
+        """
         start = time.time()
         tc_id = "TC_NAV_002"
 
@@ -109,7 +131,12 @@ class TestNavigation(BaseTest):
             raise
 
     def test_TC_NAV_003_sidebar_navigation(self):
-        """TC_NAV_003: Sidebar navigation links work correctly."""
+        """
+        Test ID : TC_NAV_003  (tuong duong INT_02 trong 02_system)
+        File    : test_06_navigation.py  ->  dong 111
+        Muc tieu: Dang nhap, kiem tra cac nut sidebar dieu huong duoc
+                  (Thu nhap -> /income, Chi tieu -> /expense, Dashboard luon dung).
+        """
         start = time.time()
         tc_id = "TC_NAV_003"
 
@@ -183,7 +210,12 @@ class TestNavigation(BaseTest):
 
 
     def test_TC_NAV_004_login_to_signup_navigation(self):
-        """TC_NAV_004: Navigate from Login to Sign Up page."""
+        """
+        Test ID : TC_NAV_004  (tuong duong LOG_01 trong 02_system)
+        File    : test_06_navigation.py  ->  dong 185
+        Muc tieu: Mo trang /login, tim link 'Dang ky' va nhap,
+                  xac minh URL chuyen sang chua 'signup'.
+        """
         start = time.time()
         tc_id = "TC_NAV_004"
 
@@ -228,7 +260,12 @@ class TestNavigation(BaseTest):
             raise
 
     def test_TC_NAV_005_signup_to_login_navigation(self):
-        """TC_NAV_005: Navigate from Sign Up to Login page."""
+        """
+        Test ID : TC_NAV_005  (tuong duong REG_01 trong 02_system)
+        File    : test_06_navigation.py  ->  dong 230
+        Muc tieu: Mo trang /signup, tim link 'Dang nhap' va nhap,
+                  xac minh URL chuyen sang chua 'login'.
+        """
         start = time.time()
         tc_id = "TC_NAV_005"
 
@@ -273,7 +310,12 @@ class TestNavigation(BaseTest):
             raise
 
     def test_TC_NAV_006_window_title(self):
-        """TC_NAV_006: Verify browser window has a title."""
+        """
+        Test ID : TC_NAV_006  (tuong duong INT_01 trong 02_system)
+        File    : test_06_navigation.py  ->  dong 275
+        Muc tieu: Mo trang /login va kiem tra driver.title khong rong
+                  (ung dung phai co tieu de cua so hop le).
+        """
         start = time.time()
         tc_id = "TC_NAV_006"
 
@@ -303,7 +345,13 @@ class TestNavigation(BaseTest):
             raise
 
     def test_TC_NAV_007_window_resize(self):
-        """TC_NAV_007: Application handles window resize gracefully."""
+        """
+        Test ID : TC_NAV_007  (tuong duong INT_03 trong 02_system)
+        File    : test_06_navigation.py  ->  dong 305
+        Muc tieu: Sau dang nhap, thay doi kich thuoc cua so qua 4 muc:
+                  1920x1080, 1366x768, 768x1024, 375x812. Xac minh trang
+                  khong hien thi loi React sau moi lan resize.
+        """
         start = time.time()
         tc_id = "TC_NAV_007"
 
@@ -347,7 +395,13 @@ class TestNavigation(BaseTest):
             raise
 
     def test_TC_NAV_008_root_url_redirects(self):
-        """TC_NAV_008: Root URL '/' redirects based on auth state."""
+        """
+        Test ID : TC_NAV_008  (tuong duong LOG_03 trong 02_system)
+        File    : test_06_navigation.py  ->  dong 349
+        Muc tieu: Kiem tra URL goc '/' trong 2 trang thai:
+                  (1) Chua dang nhap -> chuyen huong den /login
+                  (2) Da dang nhap   -> chuyen huong den /dashboard
+        """
         start = time.time()
         tc_id = "TC_NAV_008"
 

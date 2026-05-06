@@ -1,10 +1,19 @@
 # -*- coding: utf-8 -*-
 """
+File: test_04_expense.py
 Test Suite 4: Kiểm tra chức năng Quản lý Chi tiêu (Expense Management)
-ID hệ thống: EXP_IC_03, EXP_IC_05, EXP_IC_06, EXP_IC_07, EXP_01
-             (tương đương Feature_IM nhưng cho mô-đun chi tiêu)
+
+Danh sách Test ID được kiểm tra trong file này:
+  - TC_EXP_001       → dòng 119  : Thêm chi tiêu hợp lệ (thực phẩm)
+  - TC_EXP_002       → dòng 163  : Thêm chi tiêu hợp lệ (giao thông)
+  - TC_EXP_005       → dòng 207  : Thêm chi tiêu thiếu danh mục (validate)
+  - TC_EXP_008       → dòng 245  : Thêm chi tiêu với số tiền âm (validate)
+  - TC_EXP_DELETE_001→ dòng 283  : Xóa một bản ghi chi tiêu
+  - TC_EXP_UI_001    → dòng 339  : Kiểm tra bố cục giao diện trang chi tiêu
+
 Mô tả: Kiểm tra thêm/xóa chi tiêu qua giao diện UI,
        xác minh dữ liệu trong DB qua API, bao gồm rollback sau test.
+Dữ liệu test: selenium_tests/test_data/test_expense.csv
 """
 import time                          # Thư viện thời gian để tạm dừng thực thi
 import unittest                      # Framework kiểm thử đơn vị Python
@@ -117,7 +126,13 @@ class TestExpense(BaseTest):
     # ═══════════════════════════════════════════════════════════
 
     def test_TC_EXP_001_add_food_expense(self):
-        """TC_EXP_001: Add food expense with valid data."""
+        """
+        Test ID : TC_EXP_001
+        File    : test_04_expense.py  →  dòng 119
+        Mục tiêu: Thêm chi tiêu hợp lệ (danh mục: thực phẩm) và xác minh
+                  bản ghi được lưu vào DB qua API (count tăng 1).
+        Dữ liệu : test_expense.csv, hàng test_case_id = TC_EXP_001
+        """
         start = time.time()
         tc_id = "TC_EXP_001"
         test_data = self.load_csv("test_expense.csv")
@@ -161,7 +176,13 @@ class TestExpense(BaseTest):
             raise
 
     def test_TC_EXP_002_add_transport_expense(self):
-        """TC_EXP_002: Add transportation expense."""
+        """
+        Test ID : TC_EXP_002
+        File    : test_04_expense.py  →  dòng 163
+        Mục tiêu: Thêm chi tiêu hợp lệ (danh mục: giao thông) và xác minh
+                  bản ghi được lưu vào DB qua API (count tăng 1).
+        Dữ liệu : test_expense.csv, hàng test_case_id = TC_EXP_002
+        """
         start = time.time()
         tc_id = "TC_EXP_002"
         test_data = self.load_csv("test_expense.csv")
@@ -205,7 +226,13 @@ class TestExpense(BaseTest):
             raise
 
     def test_TC_EXP_005_missing_category(self):
-        """TC_EXP_005: Add expense without category should fail."""
+        """
+        Test ID : TC_EXP_005
+        File    : test_04_expense.py  →  dòng 207
+        Mục tiêu: Thêm chi tiêu mà không nhập danh mục → hệ thống phải từ chối
+                  (count không tăng HOẶC hiển thị thông báo lỗi bắt buộc).
+        Dữ liệu : test_expense.csv, hàng test_case_id = TC_EXP_005
+        """
         start = time.time()
         tc_id = "TC_EXP_005"
         test_data = self.load_csv("test_expense.csv")
@@ -243,7 +270,13 @@ class TestExpense(BaseTest):
             raise
 
     def test_TC_EXP_008_negative_amount(self):
-        """TC_EXP_008: Add expense with negative amount should fail."""
+        """
+        Test ID : TC_EXP_008
+        File    : test_04_expense.py  →  dòng 245
+        Mục tiêu: Thêm chi tiêu với số tiền âm → hệ thống phải từ chối
+                  (count không tăng HOẶC hiển thị thông báo số tiền không hợp lệ).
+        Dữ liệu : test_expense.csv, hàng test_case_id = TC_EXP_008
+        """
         start = time.time()
         tc_id = "TC_EXP_008"
         test_data = self.load_csv("test_expense.csv")
@@ -281,7 +314,13 @@ class TestExpense(BaseTest):
             raise
 
     def test_TC_EXP_DELETE_001_delete_expense(self):
-        """TC_EXP_DELETE_001: Delete an expense entry."""
+        """
+        Test ID : TC_EXP_DELETE_001
+        File    : test_04_expense.py  →  dòng 283
+        Mục tiêu: Xóa một bản ghi chi tiêu qua UI và xác minh count giảm 1
+                  khi gọi API. Dữ liệu seed được tạo sẵn qua API trước khi test.
+        Dữ liệu : Seed trực tiếp qua API (category='Delete Test', amount=50000)
+        """
         start = time.time()
         tc_id = "TC_EXP_DELETE_001"
 
@@ -337,7 +376,12 @@ class TestExpense(BaseTest):
     # ─── UI Checks ───────────────────────────────────────────
 
     def test_TC_EXP_UI_001_page_layout(self):
-        """Verify expense page layout."""
+        """
+        Test ID : TC_EXP_UI_001
+        File    : test_04_expense.py  →  dòng 339
+        Mục tiêu: Xác minh trang chi tiêu hiển thị đầy đủ: tiêu đề module
+                  và nút 'Thêm chi tiêu'. Không cần kiểm tra dữ liệu DB.
+        """
         start = time.time()
         tc_id = "TC_EXP_UI_001"
 
