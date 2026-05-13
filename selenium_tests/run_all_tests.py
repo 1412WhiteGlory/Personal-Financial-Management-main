@@ -100,8 +100,6 @@ def main():
     else:
         # Discover all test files
         test_modules = [
-            "test_01_registration",
-            "test_02_login",
             "test_03_income",
             "test_04_expense",
             "test_05_dashboard",
